@@ -1,0 +1,28 @@
+h1 {
+    display: block;
+    text-align: center
+  }
+  
+  p1, p2, p3, p4, p5, p6 {
+    display: block;
+  }
+  
+  p2 {
+    text-align: center;
+  }
+  
+  p3 {
+    text-align: right;
+  }
+  
+  p4 {
+    text-align: left;
+  }
+  
+  p5 {
+    text-align: justify;
+  }
+  
+  p6 {
+    white-space: pre-line;
+  }

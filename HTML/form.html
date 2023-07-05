@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+  <form id="register" method="post">
+    <h2>Student Registration Form</h2>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br>
+    <label for="number">Phone number:</label><br>
+    <input type="tel" id="phone_number" name="phone_number"><br><br>
+    <label for="gender">Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label><br>
+
+    <label for="major">Major:</label><br>
+    <select id="major" name="major">
+      <option value="computer-science">Computer Science</option>
+      <option value="business">Business</option>
+      <option value="engineering">Engineering</option>
+      <option value="other">Other</option>
+    </select><br>
+    <input type="submit" value="Submit"><br>
+    <!-- <a href="\Signup">Forget password</a><br> -->
+    
+  </form>
+  
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+      $('#register').submit(function (event){
+        event.preventDefault();
+        errorArray = []
+        const Name = $('#name').val();
+        const email = $('#email').val();
+        const password = $('#password').val();
+        const phone_number = $('#tel').val();
+        console.log('Name ,  email, password, tel');
+        
+        if(!name)errorArray.push('Name field is required.');
+        if(!email)errorArray.push('Email field is required.');
+        if(!phone)errorArray.push('Phone_Number field is required.');
+
+        if(!password)errorArray.push('Password field is required.');
+        console.log(errorArray);
+        let errorStrings = '<ul>';
+          errorArray.forEach(value =>{
+          errorStrings += '<li>'+value+'</li>';
+
+          })
+          errorStrings += '</ul>';
+          console.log(errorStrings);
+          $('#errors').empty().append(errorStrings);
+          console.log('form submit');
+
+          
+
+  
+      })
+    </script>
+
+</body>
+
+</html>
